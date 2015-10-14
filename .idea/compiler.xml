@@ -23,10 +23,27 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="com.boom.data.back" />
+        <module name="dragon" />
+        <module name="Horsemen" />
+        <module name="Leviathan" />
+        <module name="Unicorns" />
+      </profile>
+      <profile default="false" name="Annotation profile for static" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="boom_taotao" target="1.8" />
+      <module name="boot" target="1.5" />
       <module name="com.boom.data.back" target="1.5" />
+      <module name="dragon" target="1.5" />
+      <module name="Horsemen" target="1.5" />
+      <module name="Leviathan" target="1.5" />
+      <module name="static" target="1.8" />
+      <module name="Unicorns" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

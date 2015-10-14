@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/boom_taotao.iml" filepath="$PROJECT_DIR$/boom_taotao.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.boom.data.back.iml" filepath="$PROJECT_DIR$/com.boom.data.back.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot/spring_boot父pom.iml" filepath="$PROJECT_DIR$/boot/spring_boot父pom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dragon/web项目.iml" filepath="$PROJECT_DIR$/dragon/web项目.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Leviathan/zookeeper元数据配置服务.iml" filepath="$PROJECT_DIR$/Leviathan/zookeeper元数据配置服务.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Horsemen/后台项目.iml" filepath="$PROJECT_DIR$/Horsemen/后台项目.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicorns/搜索服务.iml" filepath="$PROJECT_DIR$/Unicorns/搜索服务.iml" />
+      <module fileurl="file://$PROJECT_DIR$/static/静态化服务.iml" filepath="$PROJECT_DIR$/static/静态化服务.iml" />
     </modules>
   </component>
 </project>
