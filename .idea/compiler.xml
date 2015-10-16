@@ -27,12 +27,23 @@
         <module name="Horsemen" />
         <module name="Leviathan" />
         <module name="Unicorns" />
+        <module name="web项目" />
+        <module name="zookeeper元数据配置服务" />
+        <module name="后台项目" />
+        <module name="搜索服务" />
       </profile>
       <profile default="false" name="Annotation profile for static" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
         <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for 静态化服务" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="静态化服务" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -42,8 +53,14 @@
       <module name="dragon" target="1.5" />
       <module name="Horsemen" target="1.5" />
       <module name="Leviathan" target="1.5" />
+      <module name="spring_boot父pom" target="1.5" />
       <module name="static" target="1.8" />
       <module name="Unicorns" target="1.5" />
+      <module name="web项目" target="1.5" />
+      <module name="zookeeper元数据配置服务" target="1.5" />
+      <module name="后台项目" target="1.5" />
+      <module name="搜索服务" target="1.5" />
+      <module name="静态化服务" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
