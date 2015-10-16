@@ -10,7 +10,7 @@
     <script src="js/angular-route.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body ng-controller="indexController">
 <div class="row" style="height: 80px;">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -20,9 +20,9 @@
             </div>
 
             <ul class="nav navbar-nav" id="nav_my">
-                <li class="active"><a href="#">&nbsp;&nbsp;商品&nbsp;&nbsp;</a></li>
-                <li class="active"><a href="#">&nbsp;&nbsp;权利&nbsp;&nbsp;</a></li>
-                <li><a href="#">&nbsp;&nbsp;权限&nbsp;&nbsp;</a></li>
+                <li class="active" ng-click=""><a href="javascript:void(0)" ng-click="menu(0)">&nbsp;&nbsp;商品&nbsp;&nbsp;</a>
+                </li>
+                <li><a href="javascript:void(0)" ng-click="menu(1)">&nbsp;&nbsp;权利&nbsp;&nbsp;</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -52,11 +52,9 @@
     </nav>
 </div>
 <div class="row">
-    <div class="col-lg-2" ng-controller="indexController">
-        <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="商品">index</a></li>
-            <li role="presentation" ng-click="show()"><a href="#/two">Profile{{name}}</a></li>
-            <li role="presentation"><a href="#/three">Messages</a></li>
+    <div class="col-lg-2">
+        <ul class="nav nav-pills nav-stacked" id="menu_my">
+            <li ng-repeat="menu in menuDate"><a href="#{{menu.url}}" ng-click="active($event.currentTarget)">{{menu.name}}</a></li>
         </ul>
     </div>
     <div class="col-lg-8">
@@ -66,7 +64,10 @@
 <script>
     var myAppModule = angular.module('Tao', ["ngRoute"]);
     $(function () {
-
+        $("#nav_my li").click(function () {
+            $(this).siblings().removeClass("active");
+            $(this).addClass("active")
+        })
     })
 </script>
 <script src="app/service/ajaxService.js"></script>
