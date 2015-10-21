@@ -6,6 +6,9 @@ myAppModule.config(['$routeProvider', function ($routeProvider) {
         when('/index', {
             templateUrl: 'app/template/index.html',
             controller: 'indexViewController'
+        }).when('/save', {
+            templateUrl: 'app/template/save.html',
+            controller: 'indexViewController'
         }).
         otherwise({
             redirectTo: '/index'

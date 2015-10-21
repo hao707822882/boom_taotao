@@ -1,7 +1,7 @@
 myAppModule.controller('indexController', ["$scope", "Ajax", function ($scope, Ajax) {
     $scope.name = 'xingoo';
-
-    var menu = [[{name: '录入', url: "/addView"}, {name: '检索', url: "/searchView"}], [{name: '举报', url: "/reportView"}]]
+    var menu = [[{name: '录入', url: "/save"}, {name: '检索', url: "/index"}], [{name: '举报', url: "/reportView"}]]
+    //var menu = [[{name: '录入', url: "/addView"}, {name: '检索', url: "/searchView"}], [{name: '举报', url: "/reportView"}]]
     $scope.menuDate = menu[0];
 
     $scope.menu = function (index) {

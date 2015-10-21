@@ -9,6 +9,11 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="app/frame/starter.js"></script>
+    <script src="app/frame/UIStarterService.js"></script>
+    <script src="app/frame/UIStarterDirective.js"></script>
+
 </head>
 <body ng-controller="indexController">
 <div class="row" style="height: 80px;">
@@ -30,7 +35,7 @@
     </nav>
 </div>
 
-<div class="row" >
+<div class="row">
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-stacked" id="menu_my">
             <li ng-repeat="menu in menuDate"><a href="#{{menu.url}}" ng-click="active($event.currentTarget)">{{menu.name}}</a>
@@ -43,7 +48,8 @@
     </div>
 </div>
 <script>
-    var myAppModule = angular.module('Tao', ["ngRoute"]);
+
+    var myAppModule = angular.module('Tao', ["ngRoute", "start"]);
     $(function () {
         $("#nav_my li").click(function () {
             $(this).siblings().removeClass("active");
