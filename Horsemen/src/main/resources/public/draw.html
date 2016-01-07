@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Tao">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery.js"></script>
+    <script src="echart/echarts-all.js"></script>
+</head>
+<body>
+
+<!--Step:1 Prepare a dom for ECharts which (must) has size (width & hight)-->
+<!--Step:1 为ECharts准备一个具备大小（宽高）的Dom-->
+<div id="main" style="height:500px;border:1px solid #ccc;padding:10px;"></div>
+
+<!--Step:2 Import echarts.js-->
+<!--Step:2 引入echarts.js-->
+
+<script type="text/javascript">
+    $(function () {
+        var myChart = echarts.init(document.getElementById('main'));
+        myChart.setOption({
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                data: ['蒸发量', '降水量']
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: ['1月', '2月', '3月', '4月', '5月', '6月']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    splitArea: {show: true}
+                }
+            ],
+            series: [
+                {
+                    name: '蒸发量',
+                    type: 'bar',
+                    data: [50, 4.9, 7.0, 23.2, 25.6, 76.7]
+                },
+                {
+                    name: '降水量',
+                    type: 'bar',
+                    data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7]
+                }
+            ]
+        });
+
+
+    })
+
+</script>
+<button id="cli">xxxxx</button>
+</body>
+</html>

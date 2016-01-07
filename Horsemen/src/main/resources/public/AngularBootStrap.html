@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.min.js"></script>
+
+
+</head>
+<body ng-app="Test">
+<div ng-controller="AccordionDemoCtrl">
+    <script type="text/ng-template" id="alert.html">
+        <div class="alert" style="background-color:#fa39c3;color:white" role="alert">
+            <div ng-transclude></div>
+        </div>
+    </script>
+
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    <uib-alert template-url="alert.html">A happy alert!</uib-alert>
+    <button type="button" class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+</div>
+
+
+<script>
+
+    var myAppModule = angular.module('Test', ["ngRoute", "start"]);
+    $(function () {
+        $("#nav_my li").click(function () {
+            $(this).siblings().removeClass("active");
+            $(this).addClass("active")
+        })
+    })
+</script>
+<script src="app/service/ajaxService.js"></script>
+<script src="app/indexController.js"></script>
+<script src="app/indexViewController.js"></script>
+<script src="app/router/router.js"></script>
+</body>
+</html>

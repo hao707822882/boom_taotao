@@ -85,3 +85,97 @@ UIStarter.directive("autoForm", function ($http, $window, layer, serialize) {
         }
     }
 })
+
+UIStarter.directive("dialog", function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        transclude: true,
+        templateUrl: "app/directive/dialog/dialog.html"
+    }
+})
+
+UIStarter.directive("dialogbody", function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        transclude: true,
+        templateUrl: "app/directive/dialog/body.html"
+    }
+})
+UIStarter.directive("dialogfooter", function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        transclude: true,
+        templateUrl: "app/directive/dialog/footer.html"
+    }
+})
+
+UIStarter.directive("echart", function ($http, layer) {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: "app/directive/chart/echart.html",
+        transclude: true
+    }
+})
+
+UIStarter.directive("echartLine", function ($http, layer) {
+    return {
+        restrict: 'EA',
+        replace: true,
+        scope: {},
+        templateUrl: "app/directive/chart/echart.html",
+        controller: function ($scope, $element, $attrs) {
+            return true
+        },
+        link: function ($scope, $element, $attrs) {//加载数据
+            var initDataPath = $attrs.initdatapath
+            $scope.width = Number($attrs.width)
+            $scope.heigth = Number($attrs.heigth)
+            var xLine = eval("(" + $attrs.xline + ")");
+            var lineLab = eval("(" + $attrs.linetype + ")");
+            var initDate = [];
+
+            $http.get(initDataPath).success(function () {
+                $(arguments[0]).each(function (index) {
+                    var temp = {}
+                    temp.name = lineLab[index]
+                    temp.type = "bar"
+                    temp.data = this
+                    initDate.push(temp)
+                })
+                option1 = {
+                    tooltip: {
+                        trigger: 'item'
+                    },
+                    legend: {
+                        data: lineLab
+                    },
+                    calculable: true,
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: true,
+                            data: xLine
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            splitArea: {show: true}
+                        }
+                    ],
+                    series: initDate
+                }
+                var chart = echarts.init($element[0]);
+                chart.setOption(option1)
+            }).error(function () {
+                layer.msg("初始化诗句获取失败")
+            })
+
+
+        }
+    }
+})

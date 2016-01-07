@@ -37,9 +37,8 @@ public class GoodsController {
 
     @RequestMapping(value = "/goods", method = RequestMethod.GET)
     @ResponseBody
-    public List get(Good good) {
+    public List get(final Good good) {
         final Stream<Good> goodStream = goods.stream().filter(new Predicate<Good>() {
-            @Override
             public boolean test(Good g) {
                 boolean isOK = true;
                 if (good.getName() != null && good.getName() != "") {
