@@ -4,4 +4,4 @@
  * 全局扩展点 window.UIStartxx(xx为模块名)
  *
  */
-var UIStarter = angular.module("start", []);
+var UIStarter = angular.module("start", ["bootstrap"]);

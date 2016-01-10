@@ -174,8 +174,6 @@ UIStarter.directive("echartLine", function ($http, layer) {
             }).error(function () {
                 layer.msg("初始化诗句获取失败")
             })
-
-
         }
     }
 })
